@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install --build-from-source=sqlite3",
+    "build": "cd frontend && npm install && npm run build && cd ../backend && rm -rf node_modules && npm install --build-from-source=sqlite3 && npm rebuild sqlite3 --build-from-source",
     "start": "cd backend && npm start"
   }
 }
