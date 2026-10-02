@@ -32,11 +32,11 @@ async function startServer() {
 
     app.use(express.static(frontendPath));
 
-    app.get("*", (req, res) => {
-      res.sendFile(
-        path.join(frontendPath, "index.html")
-      );
-    });
+    app.get("/{*splat}", (req, res) => {
+  res.sendFile(
+    path.join(frontendPath, "index.html")
+  );
+});
 
     const PORT = process.env.PORT || 5000;
 
